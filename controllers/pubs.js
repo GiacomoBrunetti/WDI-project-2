@@ -111,7 +111,7 @@ function deleteCommentRoute(req, res, next) {
     // get the embedded record by it's id
     const comment = pub.comments.id(req.params.commentId);
     comment.remove();
-    pub.comments.push(req.body);
+    // pub.comments.push(req.body);
 
     return pub.save();
   })

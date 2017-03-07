@@ -25,14 +25,16 @@ imageSchema.virtual('src')
   });
 
 
-  const pubSchema = new mongoose.Schema({
-    name: {type: String, required: true},
-    address: {type: String, required: true},
-    expensiveness: {type: String, required: true},
-    atmosphere: {type: String, required: true},
-    comments: [ commentSchema ],
-    images: [ imageSchema ]
-  });
+const pubSchema = new mongoose.Schema({
+  name: {type: String, required: true},
+  address: {type: String, required: true},
+  expensiveness: {type: String, required: true},
+  atmosphere: {type: String, required: true},
+  comments: [ commentSchema ],
+  images: [ imageSchema ],
+  lat: Number,
+  lng: Number
+});
 
 
 module.exports = mongoose.model('Pub', pubSchema);

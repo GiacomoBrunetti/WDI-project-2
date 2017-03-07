@@ -3,8 +3,19 @@
 
 $(() =>{
 
-  $('#geocode').on('click', console.log('clicked'));
+  const $input = $('.autocomplete');
+  const autocomplete = new google.maps.places.Autocomplete($input[0]);
+  autocomplete.addListener('place_changed', () => {
 
+    const $lat = $('input[name=lat]');
+    const $lng = $('input[name=lng]');
+
+    const place = autocomplete.getPlace();
+    const location = place.geometry.location.toJSON();
+    $lat.val(location.lat);
+    $lng.val(location.lng);
+  });
+  $('#geocode').on('click', console.log('clicked'));
   initMap();
 });
 
@@ -41,17 +52,4 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setContent(browserHasGeolocation ?
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
-}
-
-
-function geocodeAddress(geocoder) {
-  var address = $('#address').value;
-  console.log(address);
-  geocoder.geocode({'address': address}, function(results, status) {
-    if (status === 'OK') {
-      console.log('ok');
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
 }

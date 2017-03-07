@@ -1,6 +1,6 @@
-<div class="row">
+<div class="container">
   <h1 class="col-lg-12">Pubs</h1>
-  <div class="col-lg-1"></div>
+  <div class="col-lg-2"></div>
     <div class="row">
       <% pubs.forEach((pub) => { %>
         <div class="col-md-4">
@@ -21,11 +21,9 @@
         </div>
       <% }) %>
     </div>
-    <div class="col-lg-1"></div>
     <% if(locals.isAuthenticated) { %>
-      <div class="col-lg-5"></div>
+      <div class="row">
       <a href="/pubs/new" class="btn btn-outline-primary" class="col-lg-2">Add</a>
-      <div class="col-lg-5"></div>
+      </div>
       <% } %>
-  </div>
-</section>
+</div>
