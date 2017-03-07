@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PubFinder</title>
+    <% include ./partials/scripts %>
+  </head>
+  <body>
+    <% include ./partials/navbar %>
+    <% for(const type in messages) { %>
+      <div class="<%= type %>">
+        <h5><%= messages[type] %></h5>
+      </div>
+    <% } %>
+    <main>
+      <%- body %>
+    </main>
+    <% include ./partials/spreadsheets %>
+  </body>
+</html>

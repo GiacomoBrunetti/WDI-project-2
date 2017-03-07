@@ -1,0 +1,13 @@
+<section class="container">
+  <form method="POST" action="/user/images" enctype="multipart/form-data">
+    <div>
+      <label for="filename">Image file</label>
+      <input type="file" name="filename" id="filename">
+    </div>
+    <div>
+      <label for="caption">Caption</label>
+      <textarea name="caption" id="caption" class="form-control"></textarea>
+    </div>
+    <button class="btn btn-outline-primary">Add</button>
+  </form>
+</section>

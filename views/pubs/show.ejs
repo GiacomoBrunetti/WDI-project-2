@@ -1,0 +1,38 @@
+<section></section>
+<section class="container">
+  <h1>Pub Show Page</h1>
+  <img src="<%= pub.image %>" alt="">
+  <section>
+    <h1><%= pub.name %></h1>
+    <p><strong>Address: </strong><%= pub.address %></p>
+    <p><strong>Expensiveness: </strong><%= pub.expensiveness %></p>
+    <p><strong>Atmosphere: </strong><%= pub.atmosphere %></p>
+    <h5>Gallery</h5>
+    <% pub.images.forEach((image) => { %>
+      <p><%= image.filename %></p>
+      <% }) %>
+  </section>
+  <section>
+  <h5>Comments</h5>
+  <% pub.comments.forEach((comment) => { %>
+    <p><%= comment.content %></p>
+    <small><%= comment.createdBy.username %></small>
+
+    <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
+      <a href="/pubs/<%= pub.id %>/comments/comment.id/edit" class="btn btn-outline-secondary">Edit comment</a>
+      <form method="POST" action="/pubs/<%= pub.id %>/comments/comment.id">
+        <input type="hidden" name="_method" value="DELETE">
+        <button class="btn btn-outline-primary">Delete comment</button>
+      </form>
+    <% } %>
+  <% }) %>
+  </section>
+  <section class="container">
+    <% if(locals.isAuthenticated) { %>
+      <form method="POST" action="/pubs/<%= pub.id %>/comments">
+        <textarea name="content" id="content" placeholder="Comment" rows="1" cols="20" class="form-control"></textarea>
+        <button class="btn btn-outline-primary">Leave a comment</button>
+      </form>
+    <% } %>
+  </section>
+</section>
