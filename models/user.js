@@ -16,8 +16,6 @@ imageSchema
   });
 
 const userSchema = new mongoose.Schema({
-  firstname: { type: String },
-  lastname: { type: String },
   username: { type: String },
   email: { type: String },
   profileImage: { type: String },

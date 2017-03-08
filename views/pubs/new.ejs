@@ -1,6 +1,6 @@
 <section>
   <div class="container">
-    <form method="POST" action="/pubs" enctype="multipart/form-data">
+    <form method="POST" action="/pubs">
       <input type="hidden" name="lat">
       <input type="hidden" name="lng">
       <div>
@@ -10,6 +10,14 @@
       <div>
         <label for="address">Address</label>
         <input type="text" name="address" id="address" class="autocomplete">
+      </div>
+      <div>
+        <label for="expensiveness">Expensiveness</label>
+        <input type="number" name="expensiveness" id="expensiveness" class="form-control">
+      </div>
+      <div>
+        <label for="atmosphere">Atmosphere</label>
+        <input type="number" name="atmosphere" id="atmosphere" class="form-control">
       </div>
       <fieldset>
         <label for="comments">Comments</label>

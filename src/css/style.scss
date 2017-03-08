@@ -1,6 +1,6 @@
 @import "bootstrap/bootstrap-grid";
 
-h1 {
+h1, h3 {
   text-align: center;
 }
 nav {
@@ -27,14 +27,7 @@ nav {
 }
 
 
-.row {
-  .row:first-child{
-    padding-top: 32px;
-  }
-  .row{
-    padding-bottom: 30px;
-  }
-}
+
 
 .searchForm {
   text-align: center;

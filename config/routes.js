@@ -1,13 +1,15 @@
 const router = require('express').Router();
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
+const statics = require('../controllers/statics');
 const secureRoute = require('../lib/secureRoute');
 const pubs = require('../controllers/pubs');
 const oauth = require('../controllers/oauth');
 const upload = require('../lib/upload');
 const users = require('../controllers/users');
 
-router.get('/', (req, res) => res.render('statics/index'));
+router.route('/')
+  .get(statics.index);
 
 router.route('/profile')
   .get(secureRoute, users.show);
