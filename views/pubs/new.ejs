@@ -1,6 +1,7 @@
+<h1>Create Pub</h1>
 <section>
   <div class="container">
-    <form method="POST" action="/pubs">
+    <form method="POST" action="/pubs" enctype="multipart/form-data">
       <input type="hidden" name="lat">
       <input type="hidden" name="lng">
       <div>
@@ -9,7 +10,7 @@
       </div>
       <div>
         <label for="address">Address</label>
-        <input type="text" name="address" id="address" class="autocomplete">
+        <input type="text" name="address" id="address" class="form-control autocomplete">
       </div>
       <div>
         <label for="expensiveness">Expensiveness</label>
@@ -18,10 +19,6 @@
       <div>
         <label for="atmosphere">Atmosphere</label>
         <input type="number" name="atmosphere" id="atmosphere" class="form-control">
-      </div>
-      <fieldset>
-        <label for="comments">Comments</label>
-        <textarea name="name" placeholder="Comments" rows="4" cols="20" class="form-control"></textarea>
       </div>
       <div>
         <label for="image">Image</label>

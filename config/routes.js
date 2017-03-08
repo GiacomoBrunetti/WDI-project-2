@@ -27,25 +27,25 @@ router.route('/user/images')
   .post(secureRoute, upload.single('filename'), users.createImage);
 
 router.route('/users/:id/images/:imageId')
-  .delete(secureRoute, users.deleteImage);
+  .delete( users.deleteImage);
 
 // router.route('/users/:id/images/:id/edit')
 //   .get(secureRoute, users.edit);
 
 router.route('/pubs')
   .get(pubs.index)
-  .post(secureRoute, pubs.create);
+  .post(upload.single('image'), pubs.create);
 
 router.route('/pubs/new')
-  .get(secureRoute, pubs.new);
+  .get(pubs.new);
 
 router.route('/pubs/:id')
   .get(pubs.show)
-  .put(secureRoute, pubs.update)
-  .delete(secureRoute, pubs.delete);
+  .put(pubs.update)
+  .delete(pubs.delete);
 
 router.route('/pubs/:id/edit')
-  .get(secureRoute, pubs.edit);
+  .get(pubs.edit);
 
 router.route('/pubs/:id/comments')
   .post(secureRoute, pubs.createComment);

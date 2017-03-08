@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Edit</h1>
 
-    <form method="POST" action="/pubs/<% pub.id %>" enctype="multipart/form-data">
+    <form method="POST" action="/pubs/<%= pub.id %>">
       <input type="hidden" name="_method" value="PUT">
       <div>
         <label for="name">Name</label>

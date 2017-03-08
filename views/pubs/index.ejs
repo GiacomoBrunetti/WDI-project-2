@@ -8,7 +8,7 @@
         <h2><%= pub.name %></h2>
         </a>
         <p><%= pub.address %></p>
-        <img src="<%= pub.image %>" class="photo">
+        <img src="<%= pub.src %>">
         <% if(locals.isAuthenticated) { %>
           <div>
             <a href="/pubs/<%= pub.id %>/edit" class="btn btn-outline-secondary edit">Edit Pub</a>

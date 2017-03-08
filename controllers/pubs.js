@@ -16,11 +16,9 @@ function newRoute(req, res) {
 
 function createRoute(req, res, next) {
   if(req.file) req.body.image = req.file.key;
-  req.body.createdBy = req.user;
-
   req.body = Object.assign({}, req.body);
+  console.log(req.body);
 
-  req.user.images.push(req.body);
 
   Pub
     .create(req.body)
@@ -66,7 +64,7 @@ function updateRoute(req, res, next) {
 
       return pub.save();
     })
-    .then(() => res.redirect(`/pubs/${req.params.id}`))
+    .then((pub) => res.redirect(`/pubs/${pub.id}`))
     .catch((err) => {
       if(err.name === 'ValidationError') return res.badRequest(`/pubs/${req.params.id}/edit`, err.toString());
       next(err);

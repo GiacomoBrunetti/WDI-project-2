@@ -12,7 +12,7 @@ imageSchema
   .get(function getImageSRC(){
     if(!this.filename) return null;
     if(this.filename.match(/^http/)) return this.filename;
-    return `https://s3-eu-west-1.amazonaws.com/wdi-ldn/${this.filename}`;
+    return `https://s3-eu-west-1.amazonaws.com/wdi-ldn-25/${this.filename}`;
   });
 
 const userSchema = new mongoose.Schema({
@@ -30,7 +30,7 @@ userSchema
 .get(function getProfileImageSRC() {
   if(!this.profileImage) return null;
   if(this.profileImage.match(/^http/)) return this.profileImage;
-  return `https://s3-eu-west-1.amazonaws.com/wdi-ldn/${this.profileImage}`;
+  return `https://s3-eu-west-1.amazonaws.com/wdi-ldn-25/${this.profileImage}`;
 });
 
 userSchema

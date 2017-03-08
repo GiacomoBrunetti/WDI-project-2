@@ -14,16 +14,6 @@ commentSchema.methods.ownedBy = function ownedBy(user) {
   return this.createdBy.id === user.id;
 };
 
-const imageSchema = new mongoose.Schema({
-  filename: {type: String}
-});
-
-imageSchema.virtual('src')
-  .get(function getImageSRC(){
-    if(!this.filename) return null;
-    return `https://s3-eu-west-1.amazonaws.com/wdi-ldn-25/${this.filename}`;
-  });
-
 
 const pubSchema = new mongoose.Schema({
   name: {type: String, required: true},
@@ -31,10 +21,16 @@ const pubSchema = new mongoose.Schema({
   expensiveness: {type: String, required: true},
   atmosphere: {type: String, required: true},
   comments: [ commentSchema ],
-  images: [ imageSchema ],
+  image: {type: String},
   lat: Number,
   lng: Number
 });
 
+pubSchema.virtual('src')
+.get(function getImageSRC(){
+  if(!this.filename) return null;
+  if(this.filename.match(/^http/)) return this.filename;
+  return `https://s3-eu-west-1.amazonaws.com/wdi-ldn-25/${this.filename}`;
+});
 
 module.exports = mongoose.model('Pub', pubSchema);

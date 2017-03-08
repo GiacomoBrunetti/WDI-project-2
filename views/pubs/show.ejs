@@ -1,16 +1,14 @@
-<section></section>
+
 <section class="container">
   <h1>Pub Show Page</h1>
-  <img src="<%= pub.image %>" alt="">
+  <img src="<%= pub.src %>" alt="">
   <section>
     <h1><%= pub.name %></h1>
     <p><strong>Address: </strong><%= pub.address %></p>
     <p><strong>Expensiveness: </strong><%= pub.expensiveness %></p>
     <p><strong>Atmosphere: </strong><%= pub.atmosphere %></p>
-    <h5>Gallery</h5>
-    <% pub.images.forEach((image) => { %>
-      <p><%= image.filename %></p>
-      <% }) %>
+    <h5>Image</h5>
+      <img src="<%= pub.src %>">
   </section>
   <section>
   <h5>Comments</h5>
