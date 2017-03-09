@@ -8,11 +8,23 @@
       <form action="/" method="GET">
 
         <label for="expensiveness" class="col-lg-5" >Expensiveness</label>
-          <input type="number" name="expensiveness" id="exp"class="col-lg-6" max="5" min="1" max="5">
-
-          <label for="atmosphere" class="col-lg-5">Atmosphere</label>
-          <input type="number" name="atmosphere" id="atm" class="col-lg-6"max="5"min="1" max="5">
-
+        <select class="form-control" name="expensiveness">
+          <option value=""></option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label for="atmosphere" class="col-lg-5">Atmosphere</label>
+          <select class="form-control" name="atmosphere">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
 
           <button type="submit" class="btn btn-primary btn-lg" id="search">Go!</button>
 

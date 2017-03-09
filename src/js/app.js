@@ -5,9 +5,6 @@ $(() =>{
   const pubs = $('.map1').data('pubs');
   console.log(pubs);
   let map = null;
-  const exp = $('#exp').val();
-  const atm = $('#atm').val();
-  const filteredPubs = [];
   const $input = $('.autocomplete');
 
   if($input.length > 0) {
@@ -35,7 +32,11 @@ $(() =>{
 
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 14,
-      center: lastKnowPosition || { lat: 51.51, lng: -0.072 }
+      center: lastKnowPosition || { lat: 51.51, lng: -0.072 }//,
+      // icon: {
+      //   url: "images/markers/svg/Coffee_3.svg",
+      //   scaledSize: new google.maps.Size(64, 64)
+      // }
     });
 
 

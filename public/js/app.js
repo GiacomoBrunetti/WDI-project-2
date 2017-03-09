@@ -6,9 +6,6 @@ $(function () {
   var pubs = $('.map1').data('pubs');
   console.log(pubs);
   var map = null;
-  var exp = $('#exp').val();
-  var atm = $('#atm').val();
-  var filteredPubs = [];
   var $input = $('.autocomplete');
 
   if ($input.length > 0) {
@@ -31,7 +28,11 @@ $(function () {
 
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 14,
-      center: lastKnowPosition || { lat: 51.51, lng: -0.072 }
+      center: lastKnowPosition || { lat: 51.51, lng: -0.072 } //,
+      // icon: {
+      //   url: "images/markers/svg/Coffee_3.svg",
+      //   scaledSize: new google.maps.Size(64, 64)
+      // }
     });
 
     // Try HTML5 geolocation.

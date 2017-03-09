@@ -5,13 +5,15 @@
       <img src="<%= user.profileImageSRC %>" alt="<%= user.username %>"><br>
       <a href="/user/images/new" class="btn btn-outline-primary">Add image</a>
     </div>
-    <div class="col-lg-5">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5 gallery">
       <h1 class="col-lg-12"><%= user.username %></h1>
-      <ul></ul>
+      <h3>Gallery</h3>
+      <ul class="imagesList">
       <% user.images.forEach((image) => { %>
-        <li><img class="thumbnail" src="<%= image.src %>"></li>
+        <li class="col-lg-12"><img class="thumbnail" src="<%= image.src %>"></li>
         <% }) %>
-
+      </ul>
     </div>
   </div>
 </div>

@@ -26,8 +26,8 @@ const pubSchema = new mongoose.Schema({
   lng: Number
 });
 
-pubSchema.virtual('src')
-.get(function getImageSRC(){
+pubSchema.virtual('pubImage')
+.get(function getPubImage(){
   if(!this.filename) return null;
   if(this.filename.match(/^http/)) return this.filename;
   return `https://s3-eu-west-1.amazonaws.com/wdi-ldn-25/${this.filename}`;

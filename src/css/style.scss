@@ -25,10 +25,20 @@ nav {
     }
   }
 }
+div.gallery{
 
-.thumbnail {
-  height: 100px;
-  width: auto;
+  ul.imagesList{
+    list-style: none;
+    display: inline;
+    li {
+      .thumbnail {
+        margin: 4px;
+        height: 100px;
+        width: auto;
+      }
+    }
+
+  }
 }
 
 .searchForm {
