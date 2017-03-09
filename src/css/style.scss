@@ -1,8 +1,24 @@
 @import "bootstrap/bootstrap-grid";
 
+body {
+  font-family: 'Titillium Web', sans-serif;
+  background-image: url('http://wallpapercave.com/wp/ry6XeHs.jpg');
+  background-size: cover;
+}
+
+* {
+  font-family: inherit;
+}
+
+h1 {
+  font-weight: bold;
+}
+
 h1, h3 {
   text-align: center;
+  color: white;
 }
+
 header {
   background-color: black;
   nav {
@@ -33,11 +49,18 @@ header {
   }
 }
 
+.profilePic {
+  margin-bottom: 10px;
+}
+
 div.gallery{
+  border: 1px solid black;
   ul.imagesList{
     list-style: none;
     display: inline;
     li {
+      color: white;
+      font-size: 20px;
       .thumbnail {
         margin: 4px;
         height: 100px;
@@ -62,34 +85,78 @@ div.gallery{
   background: rgba(50, 50, 50, 0.8);
 }
 
-.hide {
+.hidden {
   display: none;
+}
+
+.homeLeft {
+  margin: auto;
 }
 
 .searchForm {
   text-align: center;
 }
 
-#map {
-       height: 500px;
-       width: 500px;
+#search{
+  margin-top: 10px;
 }
 
+#map {
+  border: 15px solid rgba(0,0,0,0.6);
+  border-radius: 10px;
+
+  height: 500px;
+  width: 500px;
+  margin: auto;
+}
+
+.pubImageSmall {
+  width: 200px;
+  height: auto;
+  margin-bottom: 4px;
+}
+.form {
+  background-color: rgba(0,0,0,0.6);
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+   form {
+      label {
+        width: 100%;
+        font-size: 20px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 400;
+        text-align: center;
+      }
+    }
+}
 .pub {
-  height: 300px;
-  max-width: 414px;
-  background-color: red;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 250px;
+  max-width: 500px;
   position: relative;
-    a {
+  margin-top: 10px;
+    div {
       text-transform: capitalize;
-      color: dodgerblue;
-      font-size: 30px;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      &:hover {
-        text-decoration: line-through;
+        a {
+          color: dodgerblue;
+          font-size: 30px;
+          &:hover {
+            text-decoration: line-through;
+        }
       }
     }
+}
+
+
+.profilePic {
+  max-width: 500px;
+  max-height: 500px;
 }

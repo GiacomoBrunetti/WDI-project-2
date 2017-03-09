@@ -73,14 +73,14 @@ $(function () {
         });
         marker.addListener('click', function () {
           console.log(latLng);
-          $('#pubName').toggleClass('hidden');
-          $('.form').toggleClass('hidden');
+          $('.pub').removeClass('hidden');
+          $('.form').addClass('hidden');
           pubs.forEach(function (pub) {
             if (pub.lat === latLng.lat && pub.lng === latLng.lng) {
               console.log(pub.name, pub._id);
               //$('#pubName').html(pub.name);
               $('.pub').empty();
-              $('.pub').append('<a href="/pubs/' + pub._id + '">' + pub.name + '</a>');
+              $('.pub').append('<div><h3><a href="/pubs/' + pub._id + '">' + pub.name + '</a></h3><p><Address: ' + pub.address + '</p><p>Expensiveness: ' + pub.expensiveness + '</p><p>Atmosphere: ' + pub.atmosphere + '</p>');
             }
           });
         });
