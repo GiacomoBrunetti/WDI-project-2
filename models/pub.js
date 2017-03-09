@@ -27,10 +27,10 @@ const pubSchema = new mongoose.Schema({
 });
 
 pubSchema.virtual('pubImage')
-.get(function getPubImage(){
-  if(!this.filename) return null;
-  if(this.filename.match(/^http/)) return this.filename;
-  return `https://s3-eu-west-1.amazonaws.com/wdi-ldn-25/${this.filename}`;
+.get(function getPubImage() {
+  if(!this.image) return null;
+  if(this.image.match(/^http/)) return this.image;
+  return `https://s3-eu-west-1.amazonaws.com/wdi-ldn-25/${this.image}`;
 });
 
 module.exports = mongoose.model('Pub', pubSchema);

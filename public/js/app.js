@@ -29,10 +29,6 @@ $(function () {
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 14,
       center: lastKnowPosition || { lat: 51.51, lng: -0.072 } //,
-      // icon: {
-      //   url: "images/markers/svg/Coffee_3.svg",
-      //   scaledSize: new google.maps.Size(64, 64)
-      // }
     });
 
     // Try HTML5 geolocation.
@@ -70,10 +66,23 @@ $(function () {
       var latLng = { lat: pub.lat, lng: pub.lng };
       console.log(latLng);
       window.setTimeout(function () {
-        new google.maps.Marker({
+        var marker = new google.maps.Marker({
           position: latLng,
           map: map,
           animation: google.maps.Animation.DROP
+        });
+        marker.addListener('click', function () {
+          console.log(latLng);
+          $('#pubName').toggleClass('hidden');
+          $('.form').toggleClass('hidden');
+          pubs.forEach(function (pub) {
+            if (pub.lat === latLng.lat && pub.lng === latLng.lng) {
+              console.log(pub.name, pub._id);
+              //$('#pubName').html(pub.name);
+              $('.pub').empty();
+              $('.pub').append('<a href="/pubs/' + pub._id + '">' + pub.name + '</a>');
+            }
+          });
         });
       }, 100);
     });

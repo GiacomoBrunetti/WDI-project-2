@@ -1,16 +1,16 @@
 
 <section class="container">
-  <h1>Pub Show Page</h1>
-  <section>
-    <h1><%= pub.name %></h1>
-    <p>Address: <%= pub.address %></p>
-    <p>Expensiveness: <%= pub.expensiveness %></p>
-    <p>Atmosphere: <%= pub.atmosphere %></p>
-    <h5>Image</h5>
-      <img src="<%= pub.pubImage %>">
-  </section>
-  <section>
-  <h5>Comments</h5>
+  <div class="wrapper">
+    <img class="pubImage ing-responsive" src="<%= pub.pubImage %>">
+    <div class="overlay">
+      <h1><%= pub.name %></h1>
+      <p>Address: <%= pub.address %></p>
+      <p>Expensiveness: <%= pub.expensiveness %></p>
+      <p>Atmosphere: <%= pub.atmosphere %></p>
+    </div>
+  </div>
+
+  <h5>Reviews</h5>
   <% pub.comments.forEach((comment) => { %>
     <p><%= comment.content %></p>
     <small><%= comment.createdBy.username %></small>
@@ -18,7 +18,7 @@
     <% if(locals.isAuthenticated && comment.ownedBy(user)) { %>
       <form method="POST" action="/pubs/<%= pub.id %>/comments/<%= comment.id %>">
         <input type="hidden" name="_method" value="DELETE">
-        <button class="btn btn-outline-primary">Delete comment</button>
+        <button class="btn btn-outline-primary">Delete review</button>
       </form>
     <% } %>
   <% }) %>
@@ -26,9 +26,14 @@
   <section class="container">
     <% if(locals.isAuthenticated) { %>
       <form method="POST" action="/pubs/<%= pub.id %>/comments">
-        <textarea name="content" id="content" placeholder="Comment" rows="1" cols="20" class="form-control"></textarea>
-        <button class="btn btn-outline-primary">Leave a comment</button>
+        <textarea name="content" id="content" placeholder="Review" rows="1" cols="20" class="form-control"></textarea>
+        <button class="btn btn-outline-primary">Leave a review</button>
       </form>
     <% } %>
   </section>
+  </div>
 </section>
+<script>
+$('.hero').css('background-image': '<%= pub.pubImageSRC %>');
+});
+</script>

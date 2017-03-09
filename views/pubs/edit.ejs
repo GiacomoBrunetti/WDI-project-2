@@ -14,15 +14,23 @@
       </div>
       <div>
         <label for="expensiveness">Expensiveness</label>
-        <input type="number" name="expensiveness" id="expensiveness" value="<%= pub.expensiveness %>" class="form-control">
+        <select class="form-control" name="expensiveness">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
       </div>
       <div>
         <label for="atmosphere">Atmosphere</label>
-        <input type="number" name="atmosphere" id="atmosphere" value="<%= pub.atmosphere %>" class="form-control">
-      </div>
-      <div>
-        <label for="comment">Comment</label>
-        <textarea name="comment" class="form-control"><%= pub.comment %></textarea>
+        <select class="form-control" name="atmosphere">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
       </div>
       <button class="btn btn-outline-danger">Update Pub</button>
     </form>
