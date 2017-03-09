@@ -4,13 +4,17 @@
       <li><a href="/">Home</a></li>
         <% if(locals.isAuthenticated) { %>
           <li><a href="/pubs">Pubs</a></li>
-          <li><a href="/users">Users</a></li>
           <li><a href="/profile">Profile</a></li>
         <li><a href="/logout">Logout</a></li>
         <% } else { %>
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>
         <% } %>
+        <% for(const type in messages) { %>
+          <li class="<%= type %>">
+          <p><%= messages[type] %></p>
+          </li>
+          <% } %>
     </ul>
   </nav>
 </header><br>

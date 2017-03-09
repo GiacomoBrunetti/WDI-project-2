@@ -7,16 +7,9 @@
   </head>
   <body>
     <% include ./partials/navbar %>
-    <% for(const type in messages) { %>
-      <div class="<%= type %>">
-        <h5><%= messages[type] %></h5>
-      </div>
-    <% } %>
-    <section class="opaque">
     <main>
       <%- body %>
     </main>
-  </section>
-    <% include ./partials/spreadsheets %>
+    <% include ./partials/stylesheets %>
   </body>
 </html>

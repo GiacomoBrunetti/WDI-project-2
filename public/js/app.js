@@ -1,6 +1,6 @@
 'use strict';
 
-/* global google: true*/
+/* global google: true, mapStyles: true, marker: true*/
 
 $(function () {
   var pubs = $('.map1').data('pubs');
@@ -28,7 +28,8 @@ $(function () {
 
     map = new google.maps.Map(document.getElementById('map'), {
       zoom: 14,
-      center: lastKnowPosition || { lat: 51.51, lng: -0.072 } //,
+      center: lastKnowPosition || { lat: 51.51, lng: -0.072 },
+      styles: mapStyles
     });
 
     // Try HTML5 geolocation.

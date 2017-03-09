@@ -1,13 +1,12 @@
-<div class="container">
-
+<div class="container profileDiv">
   <div class="row">
     <div class="col-lg-5">
       <img class=" img-thumbnail profilePic" src="<%= user.profileImageSRC %>" alt="<%= user.username %>"><br>
-      <a href="/user/images/new" class="btn btn-outline-primary">Add image</a>
+      <a href="/user/images/new"><button>Add image</button></a>
     </div>
     <div class="col-lg-1"></div>
     <div class="col-lg-5 gallery">
-      <h1 class="col-lg-12"><%= user.username %></h1>
+      <h2 class="col-lg-12"><%= user.username %></h2>
       <ul class="imagesList">
       <% user.images.forEach((image) => { %>
         <div class="row">

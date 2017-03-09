@@ -1,20 +1,20 @@
 <div class="container">
   <h1 class="col-lg-12">Pubs</h1>
   <div class="col-lg-2"></div>
-    <div class="row">
+    <div class="row pubsIndex">
       <% pubs.forEach((pub) => { %>
         <div class="col-md-4">
         <a href="/pubs/<%= pub.id %>">
         <h2><%= pub.name %></h2>
         </a>
         <p><%= pub.address %></p>
-        <img class="pubImageSmall"src="<%= pub.pubImage %>">
+        <img class="pubImageSmall img-thumbnail"src="<%= pub.pubImage %>">
         <% if(locals.isAuthenticated) { %>
           <div>
-            <a href="/pubs/<%= pub.id %>/edit" class="btn btn-outline-secondary edit">Edit Pub</a>
+            <a href="/pubs/<%= pub.id %>/edit" class="edit"><button>Edit Pub</button></a>
             <form action="/pubs/<%= pub.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE"/>
-              <button class="btn btn-outline-danger delete">Delete Pub</button>
+              <button class="delete">Delete Pub</button>
             </form>
           </div>
           <% } %>
@@ -23,7 +23,7 @@
     </div>
     <% if(locals.isAuthenticated) { %>
       <div class="row">
-      <a href="/pubs/new" class="btn btn-outline-primary" class="col-lg-2">Add</a>
+      <a href="/pubs/new" class="col-lg-2">Add</a>
       </div>
       <% } %>
 </div>
